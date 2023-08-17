@@ -64,6 +64,11 @@ class PurchaseActivity : AppCompatActivity() {
                     openPdfINtent.setDataAndType(pdfFile, "application/pdf")
                     openPdfINtent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                     finish()
+                    Toast.makeText(
+                        this@PurchaseActivity,
+                        "Pdf generated successfully.",
+                        Toast.LENGTH_SHORT
+                    ).show()
 //                    startActivity(openPdfINtent)
                 } else {
                     Toast.makeText(
