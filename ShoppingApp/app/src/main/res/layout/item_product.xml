@@ -50,8 +50,8 @@
                 style="@style/TextAppearance.Material3.TitleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/main_product_color"
                 android:ellipsize="end"
-                android:gravity="center"
                 android:maxLines="1"
                 android:text="@{@string/currency_unit(dataHolder.price)}" />
 
