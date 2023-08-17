@@ -1,5 +1,6 @@
 package com.shopping.app.ui.main.search.viewmodel
 
+import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

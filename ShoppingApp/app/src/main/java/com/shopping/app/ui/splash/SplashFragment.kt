@@ -46,7 +46,7 @@ class SplashFragment : Fragment() {
         val userPref = UserPref(requireContext())
         CoroutineScope(Dispatchers.Main).launch {
 
-            delay(1000)
+            delay(5500)
 
             if(FirebaseAuth.getInstance().currentUser != null && userPref.getEmail().isNotEmpty()){
 

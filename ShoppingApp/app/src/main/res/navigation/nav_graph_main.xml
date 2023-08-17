@@ -18,6 +18,7 @@
     <fragment
         android:id="@+id/authFragment"
         android:name="com.shopping.app.ui.auth.authbase.AuthBaseFragment"
+        tools:layout="@layout/fragment_auth_base"
         android:label="AuthFragment" >
         <action
             android:id="@+id/action_authFragment_to_mainMenuFragment"
@@ -28,6 +29,7 @@
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.shopping.app.ui.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash"
         android:label="SplashFragment" >
         <action
             android:id="@+id/action_splashFragment_to_onboardingFragment"
@@ -48,6 +50,7 @@
     <fragment
         android:id="@+id/mainMenuFragment"
         android:name="com.shopping.app.ui.main.mainbase.MainMenuFragment"
+        tools:layout="@layout/fragment_main_menu"
         android:label="MainMenuFragment" >
         <action
             android:id="@+id/action_mainMenuFragment_to_splashFragment"
