@@ -1,5 +1,6 @@
 package com.shopping.app.ui.basket
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.graphics.Bitmap
@@ -14,6 +15,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
@@ -41,10 +43,14 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(DialogFragment.STYLE_NO_FRAME,R.style.AppBottomSheetDialogTheme)
+        setStyle(DialogFragment.STYLE_NO_FRAME, R.style.AppBottomSheetDialogTheme)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         bnd = DataBindingUtil.inflate(inflater, R.layout.fragment_basket, container, false)
         return bnd.root
     }
@@ -58,9 +64,9 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
 
         bnd.basketFragment = this
         loadingProgressBar = LoadingProgressBar(requireContext())
-         resources = requireActivity().resources
+        resources = requireActivity().resources
         // Draw company logo
-         logoBitmap = BitmapFactory.decodeResource(resources, R.drawable.company_logo)
+        logoBitmap = BitmapFactory.decodeResource(resources, R.drawable.company_logo)
 
         viewModel.basketLiveData.observe(viewLifecycleOwner) {
 
@@ -85,10 +91,12 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
                     }
 
                 }
+
                 is DataState.Error -> {
                     loadingProgressBar.hide()
                     Snackbar.make(bnd.root, it.message, Snackbar.LENGTH_LONG).show()
                 }
+
                 is DataState.Loading -> {
                     loadingProgressBar.show()
                 }
@@ -109,10 +117,12 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
                     loadingProgressBar.hide()
                     // Toast.makeText(requireContext(), getString(it.data), Toast.LENGTH_SHORT).show()
                 }
+
                 is DataState.Error -> {
                     loadingProgressBar.hide()
                     Snackbar.make(bnd.root, it.message, Snackbar.LENGTH_LONG).show()
                 }
+
                 is DataState.Loading -> {
                     loadingProgressBar.show()
                 }
@@ -130,10 +140,12 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
                     Toast.makeText(requireContext(), getString(it.data), Toast.LENGTH_SHORT).show()
                     this.dialog?.cancel()
                 }
+
                 is DataState.Error -> {
                     loadingProgressBar.hide()
                     Snackbar.make(bnd.root, it.message, Snackbar.LENGTH_LONG).show()
                 }
+
                 is DataState.Loading -> {
                     loadingProgressBar.show()
                 }
@@ -144,24 +156,32 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
 
     }
 
+    fun clickPurchaseBtn() {
+        startActivity(Intent(requireContext(), PurchaseActivity::class.java))
+    }
+
     fun clearTheBasket() {
 
-        if(viewModel.basketList.isNotEmpty()){
+        if (viewModel.basketList.isNotEmpty()) {
 
             AlertDialog.Builder(requireContext())
                 .setMessage(resources.getString(R.string.purchase_message))
                 .setPositiveButton(resources.getString(R.string.continue_)) { dialog, _ ->
                     dialog.cancel()
-                    viewModel.getPDF(resources,logoBitmap)
+                    viewModel.getPDF(resources, logoBitmap)
                     viewModel.clearTheBasket()
 
-                }.setNegativeButton(resources.getString(R.string.cancel)){ dialog, _ ->
+                }.setNegativeButton(resources.getString(R.string.cancel)) { dialog, _ ->
                     dialog.cancel()
                 }
                 .show()
 
-        }else{
-            Toast.makeText(requireContext(), getString(R.string.basket_empty_message), Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.basket_empty_message),
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
     }
@@ -175,10 +195,9 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
     }
 
 
-
 }
 
-interface ProductPieceUpdateListener{
+interface ProductPieceUpdateListener {
 
     fun increaseProduct(productBasket: ProductBasket)
 

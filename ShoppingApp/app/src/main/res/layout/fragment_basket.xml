@@ -91,7 +91,7 @@
             android:textColor="@color/white"
             app:backgroundTint="@null"
             android:layout_gravity="center"
-            android:onClick="@{v -> basketFragment.clearTheBasket()}"
+            android:onClick="@{v -> basketFragment.clickPurchaseBtn()}"
             android:layout_marginVertical="10dp" />
 
     </LinearLayout>

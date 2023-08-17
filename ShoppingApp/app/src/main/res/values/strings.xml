@@ -62,5 +62,7 @@
     <string name="purchase_success_message">Products purchased successfully.</string>
     <string name="basket_empty_message">Your basket is empty</string>
     <string name="basket_empty_message_2">Your basket is empty, please add products.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
