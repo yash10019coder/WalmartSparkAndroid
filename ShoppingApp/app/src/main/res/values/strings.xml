@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shopping App</string>
+    <string name="app_name">Walmart</string>
 
     <!-- Onboarding Screen-->
     <string name="skip">Skip</string>

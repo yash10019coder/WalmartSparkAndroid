@@ -9,8 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="main_color">#0072ce</color>
-    <color name="main_color_light">#83739F</color>
-    <color name="main_product_color">#8A60D5</color>
+    <color name="main_color_light">#79b9e7</color>
+    <color name="main_product_color">#ffc120</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="gray">#BEBEBE</color>
     <color name="rating_bar_color">#FFEB3B</color>

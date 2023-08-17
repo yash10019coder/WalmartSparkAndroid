@@ -37,28 +37,23 @@
 
             <TextView
                 android:id="@+id/tvTitle"
-                style="@style/MaterialAlertDialog.Material3.Title.Text"
+                style="@style/TextAppearance.Material3.TitleMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="@{dataHolder.title}"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:text="@{dataHolder.title}" />
 
             <TextView
                 android:id="@+id/tvPrice"
-                style="@style/MaterialAlertDialog.Material3.Title.Text"
+                style="@style/TextAppearance.Material3.TitleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="@{@string/currency_unit(dataHolder.price)}"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:text="@{@string/currency_unit(dataHolder.price)}" />
 
         </LinearLayout>
 
