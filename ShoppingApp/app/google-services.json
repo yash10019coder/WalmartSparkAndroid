@@ -1,41 +1,78 @@
 {
   "project_info": {
-    "project_number": "116998979614",
-    "project_id": "shopping-app-97582",
-    "storage_bucket": "shopping-app-97582.appspot.com"
+    "project_number": "574645739955",
+    "project_id": "walmartspark-f2f84",
+    "storage_bucket": "walmartspark-f2f84.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:116998979614:android:6f67dd73f4718d25ad2e0f",
+        "mobilesdk_app_id": "1:574645739955:android:c0c2d9fb95da970b70abc6",
         "android_client_info": {
-          "package_name": "com.shopping.app"
+          "package_name": "com.walmart.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "116998979614-h70kckkefpoaafr379f481thlaqlvv53.apps.googleusercontent.com",
+          "client_id": "574645739955-3ba3oap5ql8ctbtp2u9ff2i0seuc5ts6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.shopping.app",
-            "certificate_hash": "208c05bfc24d8ac1d630d3d0c6669a26df857c32"
+            "package_name": "com.walmart.app",
+            "certificate_hash": "7affabf046b39d029692caf17fbb269daafdb9bf"
           }
         },
         {
-          "client_id": "116998979614-vnh84gtt0ri84s3o6eoc3e5ikkclajgs.apps.googleusercontent.com",
+          "client_id": "574645739955-aib9jesli94t5i5s1rjts6jomv318q5t.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDiduMgbeS3LwdqX_FKy11VD-XEYWlRGuU"
+          "current_key": "AIzaSyB0-ZsjSF8HfohEZGEkSXmoNtwaIoEFa6k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "116998979614-vnh84gtt0ri84s3o6eoc3e5ikkclajgs.apps.googleusercontent.com",
+              "client_id": "574645739955-aib9jesli94t5i5s1rjts6jomv318q5t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574645739955:android:bd1a28c88cf5123b70abc6",
+        "android_client_info": {
+          "package_name": "com.yash10019coder.walmartsparkandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574645739955-hkdp49gn46e0n0uev9fl9br0pq0g6kma.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yash10019coder.walmartsparkandroid",
+            "certificate_hash": "7affabf046b39d029692caf17fbb269daafdb9bf"
+          }
+        },
+        {
+          "client_id": "574645739955-aib9jesli94t5i5s1rjts6jomv318q5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0-ZsjSF8HfohEZGEkSXmoNtwaIoEFa6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574645739955-aib9jesli94t5i5s1rjts6jomv318q5t.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

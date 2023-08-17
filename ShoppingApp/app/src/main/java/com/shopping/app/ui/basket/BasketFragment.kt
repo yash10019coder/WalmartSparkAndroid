@@ -1,11 +1,16 @@
 package com.shopping.app.ui.basket
 
+import android.content.pm.PackageManager
+import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
@@ -26,6 +31,8 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
 
     private lateinit var bnd: FragmentBasketBinding
     private lateinit var loadingProgressBar: LoadingProgressBar
+    private lateinit var resources: Resources
+    private lateinit var logoBitmap: Bitmap
     private val viewModel by viewModels<BasketViewModel> {
         BasketViewModelFactory(
             BasketRepositoryImpl()
@@ -51,6 +58,9 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
 
         bnd.basketFragment = this
         loadingProgressBar = LoadingProgressBar(requireContext())
+         resources = requireActivity().resources
+        // Draw company logo
+         logoBitmap = BitmapFactory.decodeResource(resources, R.drawable.company_logo)
 
         viewModel.basketLiveData.observe(viewLifecycleOwner) {
 
@@ -142,7 +152,9 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
                 .setMessage(resources.getString(R.string.purchase_message))
                 .setPositiveButton(resources.getString(R.string.continue_)) { dialog, _ ->
                     dialog.cancel()
+                    viewModel.getPDF(resources,logoBitmap)
                     viewModel.clearTheBasket()
+
                 }.setNegativeButton(resources.getString(R.string.cancel)){ dialog, _ ->
                     dialog.cancel()
                 }
@@ -161,6 +173,8 @@ class BasketFragment : BottomSheetDialogFragment(), ProductPieceUpdateListener {
     override fun reduceProduct(productBasket: ProductBasket) {
         viewModel.reduceProduct(productBasket)
     }
+
+
 
 }
 

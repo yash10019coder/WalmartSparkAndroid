@@ -16,6 +16,7 @@ class SearchViewModel(private val searchRepository: SearchRepository) : ViewMode
     private lateinit var productList:List<Product>
     private lateinit var categoryList:List<CategoryModel>
 
+    var searchedProduct : Product ? = null
     private var _searchLiveData = MutableLiveData<DataState<List<Product>?>>()
     val searchLiveData: LiveData<DataState<List<Product>?>>
         get() = _searchLiveData
@@ -149,10 +150,12 @@ class SearchViewModel(private val searchRepository: SearchRepository) : ViewMode
             if(isSearch){
 
                 val searchList = productList.filter {
-                    it.title!!.lowercase().contains(query) || it.description!!.lowercase().contains(query)
+                    it.id!! == query.toInt()
+//                            || it.description!!.lowercase().contains(query)
                 }
 
-                _searchLiveData.postValue(DataState.Success(searchList))
+                searchedProduct = searchList[0]
+//                _searchLiveData.postValue(DataState.Success(searchList))
 
             }else{
                 _searchLiveData.postValue(DataState.Success(productList))
